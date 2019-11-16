@@ -32,9 +32,9 @@ function viz(){
     let lz = document.createElement('div');
     const rotate = (angle / numberOfLz) * i-angle_off; //Create 250 degree Rotation with -135 degree offset
     const translateY = -50;
-    const hue = Math.round(angle / numberOfLz * i);
+    const red = Math.round(angle / numberOfLz * i);
     lz.classList.add('vizline');
-    lz.style.backgroundColor = 'hsl(' + (hue-angle_off) +', 80%, 55%)';
+    lz.style.backgroundColor = 'rgb(' + red +', 255, 255)';
     lz.style.transform = 'rotate(' + rotate + 'deg) translateY(' + translateY + '%)';
     tl.add({
       begin: function() {
@@ -52,7 +52,7 @@ function viz(){
     wrapperLz.appendChild(lz);
   };
 
-  for (let i = 0; i < numberOfLz; i++) createL(i);
+  for (let i = numberOfLz; i > 0; i--) createL(i);
 }
 
 //Button
