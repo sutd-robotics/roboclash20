@@ -19,6 +19,8 @@ function viz(){
   const wrapperLz = document.querySelector('.vizdis');
   const numberOfLz = 80;
   const duration = 15000;
+  const angle = 270;
+  const angle_off = -135;
   const delay = duration / numberOfLz;
 
   let tl = anime.timeline({
@@ -28,17 +30,16 @@ function viz(){
 
   function createL(i) {
     let lz = document.createElement('div');
-    const rotate = (270 / numberOfLz) * i+135; //Create 250 degree Rotation with -135 degree offset
+    const rotate = (angle / numberOfLz) * i-angle_off; //Create 250 degree Rotation with -135 degree offset
     const translateY = -50;
-    const hue = Math.round(360 / numberOfLz * i);
+    const hue = Math.round(angle / numberOfLz * i);
     lz.classList.add('vizline');
-    //lz.style.backgroundColor = 'hsl(' + hue + ', 40%, 60%)';
+    lz.style.backgroundColor = 'hsl(' + (hue-angle_off) +', 80%, 55%)';
     lz.style.transform = 'rotate(' + rotate + 'deg) translateY(' + translateY + '%)';
     tl.add({
       begin: function() {
         anime({
           targets: lz,
-          //backgroundColor: ['hsl(' + hue + ', 40%, 60%)', 'hsl(' + hue + ', 60%, 80%)'],
           rotate: [rotate + 'deg', rotate + 10 +'deg'],
           translateY: [translateY + '%', translateY + 10 + '%'],
           scale: [1, 1.25],
