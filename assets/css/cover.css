@@ -1,7 +1,3 @@
-/*
- * Globals
- */
-
 /* Links */
 a,
 a:focus,
@@ -19,15 +15,15 @@ a:hover {
   border: .05rem solid #fff;
 }
 
-
 /*
- * Base structure
- */
+* Base structure
+*/
 
 html,
 body {
   height: 100%;
   background: #192a56;
+  min-width: 320px;
 }
 
 body {
@@ -39,8 +35,8 @@ body {
 }
 
 /*
- * Header
- */
+* Header
+*/
 .masthead {
   margin-bottom: 2rem;
   background-color: #fff;
@@ -56,7 +52,6 @@ body {
   font-weight: 700;
   color: #303030;
 }
-
 
 .nav-masthead .nav-link {
   padding: .25rem 0;
@@ -76,11 +71,31 @@ body {
   border-bottom-color: #000;
 }
 
+/* Viz */
+.vizdis {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 15rem;
+}
+
+.vizline {
+  position: absolute;
+  opacity: 1;
+  width: 2px;
+  height: 4rem;
+  transform-origin: 50% 100%;
+  background: white;
+}
+
 /*
- * Cover
- */
+* Cover
+*/
 .cover {
-  padding: 20rem 1.5rem;
+  padding: 5rem 1.5rem;
 }
 .cover .btn-lg {
   padding: .75rem 1.25rem;
@@ -88,18 +103,27 @@ body {
 }
 
 /*
- * Footer
- */
+* Footer
+*/
 .mastfoot {
   color: rgba(255, 255, 255, .5);
+}
+
+.mastfoot p{
+  padding: 0 1rem;
 }
 
 @media (max-width: 1200px) {
   .masthead .navbar-brand{
     padding-left: 2rem;
   }
-
   .cover {
-    padding: 10rem 1.5rem;
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .cover {
+    padding: 1rem 1.5rem;
   }
 }
