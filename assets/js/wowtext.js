@@ -14,50 +14,50 @@ function obftext(elemID){
   b.reveal(1000,500);
 }
 
-//Animation
-function viz(){
-  const wrapperLz = document.querySelector('.vizdis');
-  const numberOfLz = 80;
-  const duration = 15000;
-  const angle = 270;
-  const angle_off = -135;
-  const delay = duration / numberOfLz;
+//Add/remove class
+function hasClass(el, className) {
+  if (el.classList)
+    return el.classList.contains(className)
+  else
+    return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'))
+}
 
-  let tl = anime.timeline({
-    duration: delay,
-    complete: function() { tl.restart(); }
-  });
+function addClass(el, className) {
+  if (el.classList)
+    el.classList.add(className)
+  else if (!hasClass(el, className)) el.className += " " + className
+}
 
-  function createL(i) {
-    let lz = document.createElement('div');
-    const rotate = (angle / numberOfLz) * i-angle_off; //Create 250 degree Rotation with -135 degree offset
-    const translateY = -50;
-    const red = Math.round(angle / numberOfLz * i);
-    lz.classList.add('vizline');
-    lz.style.backgroundColor = 'rgb(' + red +', 255, 255)';
-    lz.style.transform = 'rotate(' + rotate + 'deg) translateY(' + translateY + '%)';
-    tl.add({
-      begin: function() {
-        anime({
-          targets: lz,
-          rotate: [rotate + 'deg', rotate + 10 +'deg'],
-          translateY: [translateY + '%', translateY + 10 + '%'],
-          scale: [1, 1.25],
-          easing: 'easeInOutSine',
-          direction: 'alternate',
-          duration: duration * .1
-        });
-      }
-    });
-    wrapperLz.appendChild(lz);
-  };
-
-  for (let i = numberOfLz; i > 0; i--) createL(i);
+function removeClass(el, className) {
+  if (el.classList)
+    el.classList.remove(className)
+  else if (hasClass(el, className)) {
+    var reg = new RegExp('(\\s|^)' + className + '(\\s|$)')
+    el.className=el.className.replace(reg, ' ')
+  }
 }
 
 //Button
 function jumbleWords(){
-  obftext(".cms");
+	var lines = [
+    'Are you ready?',
+    '(ready)?signup():prepare();',
+	'Will robots inherit the earth? Yes, but they will be our children. - Marvin Minsky',
+	'A robot may not injure a human being, or, through inaction, allow a human being to come to harm. - Issac Asimov'
+];
+var randomC = Math.floor(Math.random()*lines.length);
+var dt = document.querySelector('.edate').innerText;
+var btnRegister = document.getElementById('brg');
+
+ document.querySelector('.edate').innerText=lines[randomC];
+   obftext(".edate");
+addClass(btnRegister,"disabled");
+ var counter = setInterval(function(){
+	 document.querySelector('.edate').innerText=dt;
+   obftext(".edate");
+   removeClass(btnRegister,"disabled");
+	 clearInterval(counter) // stop interval
+},5000);
 }
 
 //Change text
@@ -76,6 +76,25 @@ function typeKeywords(){
 //onLoad
 document.addEventListener('DOMContentLoaded', function() {
   obftext('.cover-heading');
+    obftext('.edate');
   typeKeywords();
-  viz();
+  animCog();
 }, false);
+
+
+//Animation
+function animCog(){
+  const svgPath = document.querySelector('.icog');
+
+const svgText = anime({
+  targets: svgPath,
+  translateX: 500,
+  rotate: 180,
+     direction: 'alternate',
+     loop: false,
+     delay: 0,
+     endDelay: 200,
+     duration: 2000,
+     easing: 'easeInOutCubic'
+});
+}
