@@ -64,7 +64,7 @@ addClass(btnRegister,"disabled");
 function typeKeywords(){
   var cm = document.getElementById('keyterms');
   var typewriter = new Typewriter(cm, {
-    strings: ['An <strong>exciting</strong>', 'A <strong>fun</strong>', ' An <strong>unique</strong>', 'An <strong>engaging</strong>', 'An <strong>autonomous</strong>'],
+    strings: ['An <strong>exciting</strong>', 'A <strong>fun</strong>', ' A <strong>unique</strong>', 'An <strong>engaging</strong>', 'An <strong>autonomous</strong>'],
     autoStart: true,
     loop: true,
     pauseFor: 1500,
