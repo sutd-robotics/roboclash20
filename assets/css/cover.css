@@ -97,6 +97,8 @@ h1{
 .cover-img {
   width:100%;
   margin-left: -500px;
+  margin-top: 1rem;
+
 }
 
 .cover-heading{
@@ -233,7 +235,7 @@ font-size: 1.5em;
     padding: 7rem 1.5rem;
   }
   .cover-img {
-    margin-top: 3rem;
+    margin-top: 3.5rem;
   }
 }
 
@@ -249,6 +251,16 @@ font-size: 1.5em;
 @media (max-width: 750px) {
   .cover {
     padding: 0.3rem 1.5rem;
+    text-align:center
+  }
+  .cover-img {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .cover {
+    padding: 0.3rem 0.5rem;
   }
   .cover-img {
     margin-top: 1rem;
