@@ -20,7 +20,8 @@
 <body>
   <header class="masthead" >
     <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light ">
-      <a class="navbar-brand" href="#"><i class="fas fa-robot"></i> R0B0CLASH</a>
+      <!--a class="navbar-brand" href="#"><i class="fas fa-robot"></i> R0B0CLASH</a-->
+	  <a href="#" class="navbar-left logo-f"><img src="assets/media/logoC.svg"></a>
       <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -29,27 +30,37 @@
           <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
+          <a href="#" class="btn-mr btn disabled" >Registration closed</a>
+
         </div>
       </nav>
     </header>
 
-    <div class="cover-container d-flex w-100 h-100 p-2 mx-auto flex-column">
-      <main role="main" class="inner cover text-center " >
-        <div class="vizdis mx-auto"></div>
-        <br/><br/>
+<div class="container">
+    <div class="row p-4">
+	<div class="col-md-6 p-3 mx-auto" >
+	  <img src="assets/media/logoW_cog.svg" class="cover-img img-fluid icog"/>
+		</div>
+		<div class="col-md-6 cover mx-auto">
+		      <!--main role="main" class="inner cover text-center " -->
         <h1 class="cover-heading">ROBOCLASH 2020</h1>
+		        <p  class="schd"><span class="highlight edate" >04 - 08 May 2020</span></p>
         <p class="lead"><i class="fas fa-flag-checkered"></i> <span id="keyterms"></span>robotics competition coming your way.</p>
-        <p class="lead">
-          <a href="#" class="btn btn-lg btn-secondary disabled cms" onclick="jumbleWords();">Coming soon</a>
+		<p class="lead">
+          <a href="#" class="btn btn-rgs btn-secondary" id="brg" onclick="jumbleWords();">Stay tune for more details!</a>
         </p>
-      </main>
 
-      <footer class="mastfoot mt-auto">
+	  </div>
+	  </div>
+
+
+	<footer class="mastfoot mt-auto">
         <div class="inner">
+		<br/>
           <p id="ftcp">Copyright © SUTD Organization of Autonomous Robotics 2019</p>
         </div>
       </footer>
-    </div>
+	</div>
 
     <!-- Scripts -->
     <script src="assets/vendor/anime.min.js"></script>
@@ -59,7 +70,5 @@
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/wowtext.js"></script>
 
-
   </body>
-
   </html>
