@@ -1,18 +1,18 @@
 @font-face {
-font-family: Orkney;
-src: url("fonts/Orkney-Regular.woff") format("woff"), url("fonts/Orkney-Regular.ttf")  format("truetype");
+  font-family: Orkney;
+  src: url("fonts/Orkney-Regular.woff") format("woff"), url("fonts/Orkney-Regular.ttf")  format("truetype");
 }
 
 @font-face {
-font-family: Orkney;
-font-weight: bold;
-src: url("fonts/Orkney-Bold.woff") format("woff"), url("fonts/Orkney-Bold.ttf")  format("truetype");
+  font-family: Orkney;
+  font-weight: bold;
+  src: url("fonts/Orkney-Bold.woff") format("woff"), url("fonts/Orkney-Bold.ttf")  format("truetype");
 }
 
 @font-face {
-font-family: Orkney;
-font-weight: thin;
-src: url("fonts/Orkney-Light.woff") format("woff"), url("fonts/Orkney-Light.ttf")  format("truetype");
+  font-family: Orkney;
+  font-weight: thin;
+  src: url("fonts/Orkney-Light.woff") format("woff"), url("fonts/Orkney-Light.ttf")  format("truetype");
 }
 
 /* Links */
@@ -20,6 +20,13 @@ a,
 a:focus,
 a:hover {
   color: #fff;
+}
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -70px;
+  visibility: hidden;
 }
 
 /* Buttons */
@@ -35,9 +42,9 @@ a:hover {
 /* Menu */
 .btn-mr{
   color: #ffffff;
-background-color: #1173BA;
-    padding: .75rem 1.25rem;
-    margin: 0 1rem;
+  background-color: #1173BA;
+  padding: .75rem 1.25rem;
+  margin: 0 0.2rem;
   font-weight:700;
   text-transform: uppercase;
   line-height: 35px;
@@ -45,23 +52,23 @@ background-color: #1173BA;
 
 .btn-mr:hover,
 .btn-mr:focus {
-	color: #c22026;
+  color: #c22026;
   text-shadow: none; /* Prevent inheritance from `body` */
   background-color: #fff;
 }
 
 /* Register */
 .btn-rgs{
-color: #fff;
-background-color: #c22026;
-    padding: .75rem 1.25rem;
-font-weight:700;
+  color: #fff;
+  background-color: #c22026;
+  padding: .75rem 1.25rem;
+  font-weight:700;
   text-transform: uppercase;
 }
 
 .btn-rgs:hover,
 .btn-rgs:focus {
-	color: #c22026;
+  color: #c22026;
   text-shadow: none; /* Prevent inheritance from `body` */
   background-color: #fff;
 }
@@ -82,8 +89,8 @@ body {
   font-family: Orkney, Arial, sans-serif;
 }
 
-h1{
-	font-weight: bold;
+h1,h2,h3,h4{
+  font-weight: bold;
 }
 
 /*Sections*/
@@ -98,53 +105,74 @@ h1{
   width:100%;
   margin-left: -500px;
   margin-top: 1rem;
-
 }
 
-.cover-heading{
-	  font-size: 3rem;
+.cover-heading h1{
+  font-size: 3rem;
 }
 
 .alt-bg-r{
-	  background-color: #c22026;
+  background-color: #c22026;
 }
 
 .alt-bg-b{
-	  background-color: #1572ba;
+  background-color: #1572ba;
 }
 
 .logo-f img{
   width: 150px;
 }
 
+/*About*/
+.abt{
+  margin-top: 6rem;
+}
+
 .section{
-	  margin-top: -70px; /* height of nav, in this case 54px */
-    display: block;
-    height: 70px; /* height of nav, in this case 54px */
-    visibility: hidden;
-    position: relative;
+  margin-top: -70px; /* height of nav, in this case 54px */
+  display: block;
+  height: 70px; /* height of nav, in this case 54px */
+  visibility: hidden;
+  position: relative;
+}
+
+.section_header{
+  text-align: center;
+  text-transform: uppercase;
+  padding: 2rem;
+}
+
+.sub_section_header{
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 1rem;
+  font-weight: bold;
+}
+
+.section_bottom{
+  padding-bottom: 4rem;
 }
 
 .s-img {
-	width: auto;
-	height: 200px;
+  width: auto;
+  height: 200px;
 }
 
 .s-container{
-justify-content: center;
-align-content: center;
+  justify-content: center;
+  align-content: center;
 }
 
 .ct-style{
-font-size: 1.5em;
+  font-size: 1.5em;
   padding: 0.5em;
   text-transform: uppercase;
 }
 
 .ct-style span {
   font-size: 4.5rem;
-   margin: 0 auto;
-     text-align: center;
+  margin: 0 auto;
+  text-align: center;
 }
 
 
@@ -203,15 +231,14 @@ font-size: 1.5em;
 }
 
 .schd{
-	font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 .highlight{
-	padding: 0.4rem 0.25rem 0.25rem 0.25rem;
-	background: #FFF;
-	color: #202020;
-		font-weight: bold;
-
+  padding: 0.4rem 0.25rem 0.25rem 0.25rem;
+  background: #FFF;
+  color: #202020;
+  font-weight: bold;
 }
 
 /*
@@ -223,7 +250,7 @@ font-size: 1.5em;
 
 .mastfoot p{
   padding: 0 1rem;
-  	  text-align: center;
+  text-align: center;
 }
 
 
